@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <style>
+      .ocultar{
+        display: none;
+      }
+    </style>
+
     <title>Inventary Junk</title>
 </head>
 <body>
@@ -36,6 +43,8 @@
           <a href="{% url 'entry' %}" class="text-sm font-semibold leading-6 text-gray-900">Entry</a>
 
           <a href="{% url 'sell' %}" class="text-sm font-semibold leading-6 text-gray-900">Sell</a>
+
+          <a href="{% url 'junk' %}" class="text-sm font-semibold leading-6 text-gray-900">Junk Car</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="{% url 'signin' %}" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
@@ -45,5 +54,34 @@
 {% block content %}
 {% endblock %}
 
+<script>
+  const inputBuscar = document.getElementById('search')
+const celdas = document.getElementsByTagName('th', 'td')
+
+//buscar
+inputBuscar.addEventListener('keyup', e=>{
+    let texto = e.target.value
+    let er = new RegExp(texto, "i")
+    for (let i = 0; i< celdas.length; i++) {
+      let valor = celdas[i];
+      if (er.test(valor.innerText)) {
+            valor.classList.remove("ocultar")
+      } else {
+            console.log("valor")
+            valor.classList.add("ocultar")
+      }
+    
+    }
+})
+</script>
+<!-- <script>
+  $(document).ready(function () {
+    $('#example').DataTable();
+  });
+</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script> -->
 </body>
 </html>
