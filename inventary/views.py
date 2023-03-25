@@ -11,7 +11,6 @@ from .forms import *
     #Antes solo se accedia al request.POST o FILES
     #2023
 def entry(request):
-    validate = True
     error_messages = []
     if request.method == "GET":
         context = {'form': CarsForm(), 'errors': error_messages}
