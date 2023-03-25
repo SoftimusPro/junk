@@ -5,6 +5,11 @@ from .entry_functions import *
 from .forms import *
 
 # Create your views here.
+    #new_instance = form.save(commit=False)
+    #Permite acceder a los valores de cada campo
+    #Ej: new_instance.inventary_number
+    #Antes solo se accedia al request.POST o FILES
+    #2023
 def entry(request):
     validate = True
     error_messages = []
