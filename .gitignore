@@ -1,2 +1,7 @@
 cars/
 titles/
+inventary/__pycache__/
+django_junk/__pycache__/
+migrations/__pycache__/
+cars/
+titles/
