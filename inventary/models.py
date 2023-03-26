@@ -29,7 +29,7 @@ class Cars(models.Model):
     id = models.AutoField(primary_key = True)
     brand = models.ForeignKey(Brands, on_delete = models.CASCADE, null = True)
     model = models.ForeignKey(Models, on_delete = models.CASCADE, null = True)
-    year = models.IntegerField(max_length = 4, default = 2000)
+    year = models.IntegerField(default = 2000)
     inventary_number = models.CharField(max_length = 25, null = True)
     condition = models.CharField(choices = CONDITIONS, max_length = 6)
     entry_date = models.DateField(null = True)

@@ -12,6 +12,5 @@ urlpatterns = [
     path('entry/', views.entry, name='entry'),
     path('sell/', views.sell, name='sell'),
     path('junk/', views.junk, name='junk'),
-    path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
